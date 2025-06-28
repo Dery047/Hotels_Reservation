@@ -1,0 +1,42 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# Environment
+.env
+*.env
+.env.*
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Migrations (opcional)
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.pyd
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Node (si usás algún frontend con React o similar)
+node_modules/
+build/
+dist/
+
+# Git
+.git/
+
+# Backup
+*.bak
+*.swp
+*.tmp
