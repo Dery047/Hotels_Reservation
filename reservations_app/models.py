@@ -1,6 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from django.db import models
+
+class User(models.Model):
+    name = models.CharField(max_length=100)
+    nationality = models.CharField(max_length=30)
+    passport_id = models.CharField(max_length=20, unique=True)
+    sex = models.CharField(max_length=10)
+    email = models.EmailField(unique=True)               
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    date_of_birth = models.DateField(blank=True, null=True)
+    
+
+
 #stores fligth details
 class Flight(models.Model):
     origin = models.CharField(max_length=100)
