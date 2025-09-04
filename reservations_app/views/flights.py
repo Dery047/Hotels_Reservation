@@ -13,4 +13,21 @@ class ReserveFlightView(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
-        
+
+class FlightDetailView(generics.RetrieveAPIView):
+    queryset = Flight.objects.all()
+    serializer_class = FlightSerializer
+    permission_classes = [permissions.AllowAny]
+
+class MyReservationsView(generics.ListAPIView):
+    serializer_class = FlightReservationSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return FlightReservation.objects.filter(user=self.request.user)
+class CancelReservationView(generics.DestroyAPIView):
+    serializer_class = FlightReservationSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_queryset(self):
+        return FlightReservation.objects.filter(user=self.request.user)
