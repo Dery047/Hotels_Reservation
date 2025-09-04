@@ -18,7 +18,7 @@ class Flight(models.Model):
     destination = models.CharField(max_length=100)
     departure = models.DateTimeField()
     seats_available = models.PositiveIntegerField()
-    flight_information=models.TextField()
+
     
 #stores flight reservation details
 class FlightReservation(models.Model):
