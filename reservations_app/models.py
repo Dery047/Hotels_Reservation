@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class UserProfile(models.Model):
-    name = models.CharField(max_length=100)
+    user=models.OneToOneField(User, on_delete=models.CASCADE)
     nationality = models.CharField(max_length=30)
     passport_id = models.CharField(max_length=20, unique=True)
     sex = models.CharField(max_length=10)
@@ -18,10 +18,11 @@ class Flight(models.Model):
     destination = models.CharField(max_length=100)
     departure = models.DateTimeField()
     seats_available = models.PositiveIntegerField()
+    flight_information=models.TextField()
     
 #stores flight reservation details
 class FlightReservation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     reserved_at = models.DateTimeField(auto_now_add=True)
     # reservation_number=models.PositiveBigIntegerField(). future feature, reservation unique code
