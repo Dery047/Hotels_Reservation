@@ -25,6 +25,7 @@ class MyReservationsView(generics.ListAPIView):
 
     def get_queryset(self):
         return FlightReservation.objects.filter(user=self.request.user)
+    
 class CancelReservationView(generics.DestroyAPIView):
     serializer_class = FlightReservationSerializer
     permission_classes = [permissions.IsAuthenticated]
