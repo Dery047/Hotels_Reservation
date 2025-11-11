@@ -1,7 +1,6 @@
 # Hotels & Flights Reservation System
 
 
-Note: im currently working with other projects so my projects and repositories are temporally paused, thanks 😃
 Initial phase of a Django REST API that allows users to register, log in using JWT, and make reservations for flights and hotel rooms.
 
 Only URL configuration has been uploaded. The project is currently under development.
