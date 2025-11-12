@@ -8,15 +8,15 @@ export default function FlightDetail({ flightId }) {
     if (flightId) getFlightDetail(flightId).then(setFlight);
   }, [flightId]);
 
-  if (!flight) return <p>Selecciona un vuelo para ver detalles.</p>;
+  if (!flight) return <p>Select a flight to see details</p>;
 
   return (
     <div>
-      <h3>Detalles del vuelo</h3>
-      <p>Origen: {flight.origin}</p>
-      <p>Destino: {flight.destination}</p>
-      <p>Fecha: {flight.date}</p>
-      <p>Precio: ${flight.price}</p>
+      <h3>Flight Details</h3>
+      <p>Origin: {flight.origin}</p>
+      <p>Destination: {flight.destination}</p>
+      <p>Date: {flight.date}</p>
+      <p>Price: ${flight.price}</p>
     </div>
   );
 }
