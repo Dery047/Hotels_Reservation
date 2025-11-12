@@ -5,9 +5,9 @@ export default function ReservationForm({ flightId, token }) {
   const [status, setStatus] = useState("");
 
   const handleReserve = async () => {
-    if (!token) return alert("Debes iniciar sesión");
+    if (!token) return alert("You must login first");
     const res = await createReservation(token, { flight: flightId });
-    setStatus(res.id ? "Reserva creada ✅" : "Error al reservar ❌");
+    setStatus(res.id ? "Reservation Created" : "Error to create reservation");
   };
 
   return (
